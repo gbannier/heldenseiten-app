@@ -1,0 +1,9 @@
+<app-body
+  (handClick)="handClicked()"
+  (headClick)="headClicked()"
+  (footClick)="footClicked()"
+></app-body>
+@if (alert){
+  <ngb-alert [type]="alert.type" (closed)="close()">{{ alert.message }}</ngb-alert>
+
+}
