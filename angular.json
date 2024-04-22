@@ -3,13 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Heldenseiten": {
+    "heldenseiten-app": {
       "i18n": {
         "sourceLocale": "de-CH",
         "locales": {
           "en-US": {
             "translation":"src/locale/messages.en.xlf",
-            "baseHref": "/en/"
+            "baseHref": ""
           }
 
         }
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": ["en-US"],
+            "localize": false,
             "outputPath": "dist/heldenseiten",
             "index": "src/index.html",
             "browser": "src/main.ts",
