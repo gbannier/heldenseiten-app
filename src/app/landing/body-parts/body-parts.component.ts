@@ -55,10 +55,7 @@ export class BodyPartsComponent implements OnDestroy, OnInit{
 
   ngOnInit() {
     console.log('BodyPartsComponent initialized');
-    this.route.paramMap.pipe( map(params=>{
-      console.log('params', params);
-      return true}));
-
+    this.showBody=true;
   }
 
   handClicked() {
@@ -70,14 +67,14 @@ export class BodyPartsComponent implements OnDestroy, OnInit{
   headClicked() {
     // this.alert=undefined;
     // this.alert = {type:'success', bodyPart: 'head', message: 'Head clicked'};
-    this.router.navigate(['body-parts/head']).then(r => console.log(r));
+    this.router.navigate(['body-parts/head']).then(r=> this.showBody=false);
 
   }
 
   footClicked() {
     // this.alert=undefined;
     // this.alert = {type:'success', bodyPart: 'foot', message: 'Foot clicked'};
-    this.router.navigate(['body-parts/foot']).then(r => console.log(r));
+    this.router.navigate(['body-parts/foot']).then(r=> this.showBody=false);
   }
 
   close() {
