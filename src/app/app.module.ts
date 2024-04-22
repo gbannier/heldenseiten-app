@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {AppComponent} from "./app.component";
 import {LandingComponent} from "./landing/landing.component";
@@ -26,6 +26,9 @@ import {AppRoutingModule} from "./app.routing.module";
     CommonModule,
     NgbModule,
     LandingComponent,
+  ],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })
