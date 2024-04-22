@@ -1,9 +1,13 @@
-<app-body
-  (handClick)="handClicked()"
-  (headClick)="headClicked()"
-  (footClick)="footClicked()"
-></app-body>
+@if (showBody$ | async){
+  <app-body
+    (handClick)="handClicked()"
+    (headClick)="headClicked()"
+    (footClick)="footClicked()"
+  ></app-body>
+}
+
 @if (alert){
   <ngb-alert [type]="alert.type" (closed)="close()">{{ alert.message }}</ngb-alert>
-
 }
+<p>{{ showBody$ | async}}</p>
+<router-outlet></router-outlet>

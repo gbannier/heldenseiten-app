@@ -3,4 +3,5 @@ import {RoutingUrlType} from "./routing.url.type.model";
 
 export interface AppRoute extends Partial<Route> {
   path?: RoutingUrlType;
+  children?: AppRoute[];
 }

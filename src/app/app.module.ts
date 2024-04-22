@@ -4,20 +4,30 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {AppComponent} from "./app.component";
 import {LandingComponent} from "./landing/landing.component";
 import {BrowserModule} from "@angular/platform-browser";
-import {RouterLink, RouterLinkActive, RouterModule, RouterOutlet} from "@angular/router";
+import {
+  provideRouter,
+  RouterLink,
+  RouterLinkActive,
+  RouterModule,
+  RouterOutlet,
+  withComponentInputBinding
+} from "@angular/router";
 import {routes} from "./app.routes";
+import {BodyPartsComponent} from "./landing/body-parts/body-parts.component";
+import {AppRoutingModule} from "./app.routing.module";
 
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     CommonModule,
     NgbModule,
     LandingComponent,
-    RouterModule.forRoot(routes),
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
