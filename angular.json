@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "Heldenseiten": {
+      "i18n": {
+        "sourceLocale": "de-CH",
+        "locales": {
+          "en-US": "src/locale/messages.en.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,6 +19,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "localize": ["en-US"],
             "outputPath": "dist/heldenseiten",
             "index": "src/index.html",
             "browser": "src/main.ts",

@@ -17,18 +17,21 @@
           <a class="nav-link"
              aria-current="page"
              routerLinkActive="activebutton"
-             routerLink="/body-parts">Körper
+             routerLink="/body-parts" i18n>Körper
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/meditainment"
-             routerLinkActive="activebutton">Meditainment</a>
+             routerLinkActive="activebutton" i18n>Meditainment</a>
         </li>
-        <li class="nav-item">
-          <mat-icon svgIcon="thumbs-up">
-            <a class="nav-link" routerLink="/meditainment"
-               routerLinkActive="activebutton">Meditainment</a>
-          </mat-icon>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" i18n>
+            Sprache
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" i18n >Deutsch</a></li>
+            <li><a class="dropdown-item" href="#" i18n >Englisch</a></li>
+          </ul>
         </li>
       </ul>
     </div>
