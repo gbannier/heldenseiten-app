@@ -1,12 +1,12 @@
 import {Component, OnDestroy} from '@angular/core';
-import {Subject, take, takeUntil} from "rxjs";
+import {Subject, takeUntil} from "rxjs";
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {BodyPartsComponent} from "../body-parts/body-parts.component";
 import {HeadComponent} from "../body-parts/head/head.component";
 import {HandComponent} from "../body-parts/hand/hand.component";
 import {FootComponent} from "../body-parts/foot/foot.component";
-import {ViewportScroller} from "@angular/common";
+import {PartParams} from "../../models/part-params.model";
 
 @Component({
   selector: 'app-modal-container',
@@ -27,10 +27,11 @@ export class ModalContainerComponent implements OnDestroy {
     console.log('ModalContainerComponent');
 
 
-      route.params.pipe(takeUntil(this.destroy)).subscribe((params: any) => {
+      route.params.pipe(takeUntil(this.destroy)).subscribe((params: Params) => {
       console.log('params', params);
+      const PartParams = params as PartParams;
       this.currentDialog?.close()
-      switch (params.part) {
+      switch (PartParams.part) {
           case 'main':
             this.currentDialog = this.modalService.open(BodyPartsComponent, {centered: true});
             break;
@@ -52,9 +53,9 @@ export class ModalContainerComponent implements OnDestroy {
       //this.currentDialog.componentInstance.photo = params.id;
 
       // Go back to home page after the modal is closed
-      this.currentDialog.result.then(result => {
+      this.currentDialog.result.then(_ => {
         router.navigateByUrl('/');
-      }, reason => {
+      }, _ => {
         router.navigateByUrl('/');
       });
 

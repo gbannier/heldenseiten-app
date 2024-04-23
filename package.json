@@ -7,7 +7,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "eslint . ",
+    "lint:fix": "eslint . --fix"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +27,7 @@
     "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
+    "globals": "^15.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
@@ -36,8 +39,11 @@
     "@angular/localize": "^17.3.0",
     "@eslint/js": "^9.1.1",
     "@types/jasmine": "~5.1.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
     "angular-cli-ghpages": "^2.0.0-beta.2",
     "eslint": "^8.57.0",
+    "eslint-plugin-unused-imports": "^3.1.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

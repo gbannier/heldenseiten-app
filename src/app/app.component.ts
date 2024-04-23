@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {LandingComponent} from "./landing/landing.component";
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +8,6 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Heldenseiten';
+
 }
 
