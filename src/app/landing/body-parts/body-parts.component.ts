@@ -1,20 +1,13 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {BodyComponent} from "../body/body.component";
-import {NgbAlertModule} from "@ng-bootstrap/ng-bootstrap";
-import {
-  ActivatedRoute,
-  provideRouter,
-  Router,
-  RouterLink,
-  RouterModule,
-  RouterOutlet,
-  withComponentInputBinding
-} from "@angular/router";
+import {NgbAlertModule, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {ActivatedRoute, Router, RouterLink, RouterOutlet} from "@angular/router";
 import {HandComponent} from "./hand/hand.component";
 import {HeadComponent} from "./head/head.component";
 import {FootComponent} from "./foot/foot.component";
-import {BehaviorSubject, defer, from, map, Observable, switchMap, tap} from "rxjs";
+import {BehaviorSubject} from "rxjs";
 import {AsyncPipe, CommonModule} from "@angular/common";
+
 interface Alert {
   type: AlertType;
   bodyPart:BodyPart
@@ -43,7 +36,7 @@ export class BodyPartsComponent implements OnDestroy, OnInit{
   set showBody(showBody: boolean) {
     this.showBody$.next(showBody);
   }
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute,  private modalService: NgbModal) {
   }
 
   alert: Alert| undefined = undefined;
@@ -61,23 +54,25 @@ export class BodyPartsComponent implements OnDestroy, OnInit{
   handClicked() {
     // this.alert=undefined;
     // this.alert = {type:'success', bodyPart: 'hand', message: 'Hand clicked'};
-    this.router.navigate(['body-parts/hand']).then(r => this.showBody=false);
+    this.router.navigate(['body-parts/hand']);
   }
 
   headClicked() {
     // this.alert=undefined;
     // this.alert = {type:'success', bodyPart: 'head', message: 'Head clicked'};
-    this.router.navigate(['body-parts/head']).then(r=> this.showBody=false);
+    this.router.navigate(['body-parts/head']);
 
   }
 
   footClicked() {
     // this.alert=undefined;
     // this.alert = {type:'success', bodyPart: 'foot', message: 'Foot clicked'};
-    this.router.navigate(['body-parts/foot']).then(r=> this.showBody=false);
+    this.router.navigate(['body-parts/foot']);
   }
 
   close() {
+    this.modalService.dismissAll()
     this.alert=undefined;
   }
+
 }

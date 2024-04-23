@@ -1,32 +1,13 @@
-import { Routes } from '@angular/router';
-import {BodyPartsComponent} from "./landing/body-parts/body-parts.component";
+import {Route} from '@angular/router';
 import {MeditainmentComponent} from "./landing/meditainment/meditainment.component";
-import {AppRoute} from "./models/app-route";
-
-import {HeadComponent} from "./landing/body-parts/head/head.component";
-import {HandComponent} from "./landing/body-parts/hand/hand.component";
-import {FootComponent} from "./landing/body-parts/foot/foot.component";
 import {LandingComponent} from "./landing/landing.component";
+import {ModalContainerComponent} from "./landing/modal-container/modal-container.component";
 
-export const routes: AppRoute[] = [
-
+export const routes: Route[] = [
+  {path: '', component: LandingComponent},
   {
-    path: 'body-parts',
-    component: BodyPartsComponent,
-    children: [
-      {
-        path: 'head',
-        component: HeadComponent,
-      },
-      {
-        path: 'hand',
-        component: HandComponent,
-      },
-      {
-        path: 'foot',
-        component: FootComponent,
-      },
-    ]
+    path: 'body-parts/:part',
+    component: ModalContainerComponent,
   },
   {
     path: 'meditainment',

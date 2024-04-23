@@ -1,15 +1,35 @@
-<div class="container">
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
+<div id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button class="btn-close" type="button" (click)="close()" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center pb-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <!-- Portfolio Modal - Title-->
+              <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Du hast Schmerzen am Kopf?</h2>
+              <!-- Icon Divider-->
+              <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-plus"></i></div>
+                <div class="divider-custom-line"></div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" i18n>Bruch</li>
+                <li class="list-group-item" i18n>Schnitt</li>
+                <li class="list-group-item" i18n>Verbrennnung</li>
+                <li class="list-group-item" i18n>Schürfung</li>
+                <li class="list-group-item" i18n>Quetschung</li>
+                <li class="list-group-item" i18n>Sonstwas</li>
+              </ul>
+            </div>
+          </div>
 
-    <h5 class="card-title"i18n>Kopf</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary" i18n>Was ist mit deinem Kopf?</h6>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item" i18n>Bruch</li>
-      <li class="list-group-item" i18n>Kopfschmerzen</li>
-      <li class="list-group-item" i18n>Blut</li>
-    </ul>
+          <button class="btn btn-primary" [routerLink]="['/body-parts/main']" i18n>Zurück</button>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
-  <button class="btn btn-primary"  [routerLink]="['/body-parts',{showBody: true}]" i18n >Zurück</button>
 </div>

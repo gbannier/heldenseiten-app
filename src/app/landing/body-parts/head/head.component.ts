@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {RouterLink, RouterOutlet} from "@angular/router";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-head',
@@ -9,5 +10,9 @@ import {RouterLink, RouterOutlet} from "@angular/router";
   styleUrl: './head.component.css'
 })
 export class HeadComponent {
-
+  constructor(private modalService: NgbModal) {
+  }
+  close() {
+    this.modalService.dismissAll()
+  }
 }
