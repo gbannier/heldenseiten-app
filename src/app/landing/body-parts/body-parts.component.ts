@@ -38,7 +38,7 @@ export class BodyPartsComponent implements OnDestroy, OnInit{
   }
   constructor(private router: Router, private route: ActivatedRoute,  private modalService: NgbModal) {
   }
-
+  audio:HTMLAudioElement  = new Audio('../../assets/wotutesdennweh.mp3');
   alert: Alert| undefined = undefined;
   showBody$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
@@ -48,7 +48,8 @@ export class BodyPartsComponent implements OnDestroy, OnInit{
 
   ngOnInit() {
     console.log('BodyPartsComponent initialized');
-    this.showBody=true;
+    let element=document.getElementById('wotutesdennweh');
+    element?.addEventListener('click', ()=>this.audio.play());
   }
 
   handClicked() {

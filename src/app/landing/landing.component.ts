@@ -25,4 +25,5 @@ import {HttpClientModule} from "@angular/common/http";
   styleUrl: './landing.component.css'
 })
 export class LandingComponent {
+
 }
