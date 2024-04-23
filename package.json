@@ -9,7 +9,11 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "eslint . ",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "deploy:github":"ng build --configuration production --base-href https://gbannier.github.io/heldenseiten-app/browser && npx angular-cli-ghpages --dir=dist/heldenseiten-app/browser"
+
+
+
   },
   "private": true,
   "dependencies": {
