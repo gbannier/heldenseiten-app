@@ -48,7 +48,7 @@ export class BodyPartsComponent implements OnDestroy, OnInit{
 
   ngOnInit() {
     console.log('BodyPartsComponent initialized');
-    let element=document.getElementById('wotutesdennweh');
+    const element=document.getElementById('wotutesdennweh');
     element?.addEventListener('click', ()=>this.audio.play());
   }
 
