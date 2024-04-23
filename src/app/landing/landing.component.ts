@@ -4,7 +4,7 @@ import {RouterLink, RouterLinkActive, RouterModule, RouterOutlet} from "@angular
 import {MeditainmentComponent} from "./meditainment/meditainment.component";
 import {RoutingUrlType} from "../models/routing.url.type.model";
 import {AppRoute} from "../models/app-route";
-import {CommonModule} from "@angular/common";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
 import {MatIconModule, MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
 import {HttpClientModule} from "@angular/common/http";
@@ -23,7 +23,8 @@ import {HttpClientModule} from "@angular/common/http";
     RouterLink,
     RouterLinkActive,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    NgOptimizedImage
   ],
   styleUrl: './landing.component.css'
 })
