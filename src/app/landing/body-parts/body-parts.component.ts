@@ -38,7 +38,7 @@ export class BodyPartsComponent implements OnDestroy, OnInit{
   }
   constructor(private router: Router, private route: ActivatedRoute,  private modalService: NgbModal) {
   }
-  audio:HTMLAudioElement  = new Audio('../../assets/wotutesdennweh.mp3');
+  audio:HTMLAudioElement  = new Audio('assets/wotutesdennweh.mp3');
   alert: Alert| undefined = undefined;
   showBody$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
