@@ -10,10 +10,9 @@
     "test": "ng test",
     "lint": "eslint . ",
     "lint:fix": "eslint . --fix",
-    "deploy:github":"ng build --configuration production --base-href https://gbannier.github.io/heldenseiten-app/browser && npx angular-cli-ghpages --dir=dist/heldenseiten-app/browser"
-
-
-
+    "build:github":"ng build --configuration production --base-href https://gbannier.github.io/heldenseiten-app/browser",
+    "deploy:github":"npx angular-cli-ghpages --dir=dist/heldenseiten-app/browser",
+    "buildAndDeploy:github":"npm run build:github && npm run deploy:github"
   },
   "private": true,
   "dependencies": {
